@@ -1,0 +1,74 @@
+@font-face
+{
+    font-family : 'sofiapro-light';
+    src : url('polices/sofiapro-light-webfont.woff2') format('woff2');
+    font-style : normal;
+    font-weight : normal;
+}
+
+body
+{
+    background : url('images/bg13.jpg') no-repeat center center fixed;
+    background-size: cover;
+    font-family: 'sofiapro-light', Arial, sans-serif;
+}
+
+#contenu
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width : 990px;
+    margin : auto;
+}
+
+#formulaire
+{
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+form label
+{
+   text-align: right; 
+}
+
+input
+{
+    border: 1px solid rgb(0,0,89);
+    border-radius: 5px;
+    margin-top: 10px;
+    padding-left: 2px;
+    outline: none;
+}
+
+label
+{
+    color: rgb(0,0,89);
+    font-weight: bold;
+}
+
+strong
+{
+    color: rgb(0,0,89);
+}
+
+input[type="submit"], input[type="reset"]
+{
+    background-color: rgb(0,0,89);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100px;
+}
+
+input[type="submit"]:hover
+{
+    background-color: green;
+}
+
+input[type="reset"]:hover
+{
+    background-color: red;
+}
