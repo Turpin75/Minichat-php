@@ -13,8 +13,13 @@
     
     while($donnees = $reponse->fetch())
     {
-        echo '<p> <strong>' . htmlspecialchars($donnees['pseudo']) . ' ' . $donnees['datec_fr'] . ' : </strong>' . 
-            htmlspecialchars($donnees['message']) . '</p>';
+        // Création d'émoticones pour le chat
+        $emojis = array(':)', ':(', ';)');
+        $emojis_chemin = array('<img src="emojis/emo_smile.png" />', '<img src="emojis/emo_sad.png" />', '<img src="emojis/emo_wink.png" />');
+        $donnees['message'] = str_replace($emojis, $emojis_chemin, $donnees['message']);
+
+        echo '<p> <strong>' . htmlspecialchars($donnees['pseudo']) . ' ' . $donnees['datec_fr'] . ' : </strong>' . '<br />' .
+            nl2br($donnees['message']) . '</p>';
     }
 
     $reponse->closeCursor();
