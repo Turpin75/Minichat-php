@@ -18,8 +18,9 @@ Il faut commencer par se rendre sur google hosted jquery (hosted librairies) et 
 Prendre la dernière version.
 Ensuite créer son script js, juste avant la fin de la balise body avec setInterval, qui permet d'exécuter une fonction jquery toutes les xxx millisecondes.
 
-Intégration de smilyes au chat. Emojis téléchargés à l'adresse https://goo.gl/RO1BNm en taille 17x17.
+Intégration de smilyes au chat avec str_replace. Emojis téléchargés à l'adresse https://goo.gl/RO1BNm en taille 17x17.
 Possibilité de le faire en utlisant un bloc avec javascript jquery.
+Ne marche pas avec htmlspecialchars ou entities pour l'affichage des smileys.
 
 
 
