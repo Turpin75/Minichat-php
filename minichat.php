@@ -1,17 +1,23 @@
 
 <!DOCTYPE html>
+
 <html>
     <head>
+
         <meta charset="utf-8">
         <!-- google hosted jquery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <link rel="stylesheet" type="text/css" href="chat.css" />
         <title> Bienvenue sur le Chat! </title>
+
     </head>
     
     <body>
+
         <div id="contenu">
+
              <div id="formulaire">
+
                 <form action="minichat_post.php" method="POST">
                     
                     <label for="pseudo"> Pseudo : </label> 
@@ -19,7 +25,7 @@
                     <?php if (isset($_COOKIE['pseudocookie'])) { echo ' value="' . $_COOKIE['pseudocookie'] . '"'; } ?> > <br/>
                    
                     <label for="message"> Message : </label> 
-                    <input type="text" name="message" id="message" /> <br/>
+                    <input type="text" name="message" id="message"  /> <br/>
                     
                     <input type="submit" value="Envoyer"> <input type="reset" value="Annuler" />
                     
@@ -30,6 +36,7 @@
             <!-- On pourrait supprimer la prtie suivante en n elaissant que la balise div, mais à chque recharge de la page cela mettra du temps à s'afficher.
                 Le temps défini dans notre setInterval -->
             <div id="commentaires">
+
                 <?php
                     try
                     {
@@ -45,13 +52,20 @@
                     
                     while($donnees = $reponse->fetch())
                     {
-                        echo '<p> <strong>' . htmlspecialchars($donnees['pseudo']) . ' ' . $donnees['datec_fr'] . ' : </strong>' . 
-                            htmlspecialchars($donnees['message']) . '</p>';
+                        // Création d'émoticones pour le chat
+                        $emojis = array(':)', ':(', ';)');
+                        $emojis_chemin = array('<img src="emojis/emo_smile.png" />', '<img src="emojis/emo_sad.png" />', '<img src="emojis/emo_wink.png" />');
+                        $donnees['message'] = str_replace($emojis, $emojis_chemin, $donnees['message']);
+                       
+                        echo '<p> <strong>' . htmlspecialchars($donnees['pseudo']) . ' ' . $donnees['datec_fr'] . ' : </strong>' . '<br />' .
+                            nl2br($donnees['message']) . '</p>'; 
                     }
                 
                     $reponse->closeCursor();
                 ?>
+
             </div>
+
         </div>
 
         <!-- setInrerval permet d'exéxuter une fonction tous les xxx millisecondes
@@ -66,4 +80,5 @@
         </script>
 
     </body>
+
 </html>
