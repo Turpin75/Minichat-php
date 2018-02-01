@@ -1,6 +1,6 @@
 # Minichat-php
 
-Minichat en php
+Minichat en php (Actualisation avec jquery, intégration de smileys)
 
 Création d'un mini chat en php, avec saisie du pseudo et du message.
 Les messages, une fois enregistrés dans la base de données, sont affichés sur la même page.
@@ -17,5 +17,8 @@ Ansi les autres utlisateurs du chat pourront voir directement les nouveaux messa
 Il faut commencer par se rendre sur google hosted jquery (hosted librairies) et implémenter le script javascript au niveau du header de son programme. 
 Prendre la dernière version.
 Ensuite créer son script js, juste avant la fin de la balise body avec setInterval, qui permet d'exécuter une fonction jquery toutes les xxx millisecondes.
+
+Intégration de smilyes au chat. Emojis téléchargés à l'adresse https://goo.gl/RO1BNm en taille 17x17.
+
 
 
