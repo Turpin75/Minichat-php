@@ -19,6 +19,7 @@ Prendre la dernière version.
 Ensuite créer son script js, juste avant la fin de la balise body avec setInterval, qui permet d'exécuter une fonction jquery toutes les xxx millisecondes.
 
 Intégration de smilyes au chat. Emojis téléchargés à l'adresse https://goo.gl/RO1BNm en taille 17x17.
+Possibilité de le faire en utlisant un bloc avec javascript jquery.
 
 
 
