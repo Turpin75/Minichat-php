@@ -13,12 +13,30 @@
     
     while($donnees = $reponse->fetch())
     {
+        //Système de grades
+        $grade_req = $bdd->prepare('SELECT id FROM minichat WHERE pseudo = ?');
+        $grade_req->execute(array($donnees['pseudo']));
+        $grade = $grade_req->rowCount();
+
+        if($grade > 0 AND $grade < 5)
+        {
+            $grade = "Membre junior";
+        }
+        elseif ($grade >= 5 AND $grade < 10) 
+        {
+            $grade = "Membre habitué";
+        }
+        else
+        {
+            $grade = "Membre expert";
+        }
+        
         // Création d'émoticones pour le chat
         $emojis = array(':)', ':(', ';)');
         $emojis_chemin = array('<img src="emojis/emo_smile.png" />', '<img src="emojis/emo_sad.png" />', '<img src="emojis/emo_wink.png" />');
         $donnees['message'] = str_replace($emojis, $emojis_chemin, $donnees['message']);
 
-        echo '<p> <strong>' . htmlspecialchars($donnees['pseudo']) . ' ' . $donnees['datec_fr'] . ' : </strong>' . '<br />' .
+        echo '<p> <strong>' . htmlspecialchars($donnees['pseudo']) . ' ' . $grade . ' ' . $donnees['datec_fr'] . ' : </strong>' . '<br />' .
             nl2br($donnees['message']) . '</p>';
     }
 
