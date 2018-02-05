@@ -22,5 +22,7 @@ Intégration de smilyes au chat avec str_replace. Emojis téléchargés à l'adr
 Possibilité de le faire en utlisant un bloc avec javascript jquery.
 Ne marche pas avec htmlspecialchars ou entities pour l'affichage des smileys.
 
-
+Sytèmes de grades pour les utlisateurs basés sur le pseudo. Un grade est attribué à chaque utilisateur en fonction du nombre de messages postés sur le chat.
+Membre junior pour moins de 10 messages, habitué pour un nombre compris entre 10 et 49, et expert pour 50 et plus.
+Système qui a bout but de montrer le fonctionnement de l'attirbution de grades et qui prend tout son sens dans un vrai espace avec contrôle des informations de connection(pesudo, mdp...).
 
